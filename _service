@@ -1,0 +1,25 @@
+<services>
+  <service name="obs_scm" >
+    <param name="url">https://github.com/simdjson/simdjson</param>
+    <param name="scm">git</param>
+    <param name="revision">master</param>
+    <param name="versionformat">@PARENT_TAG@</param>
+    <param name="versionrewrite-pattern">v(.*)</param>
+    <param name="changesgenerate">enable</param>
+    <param name="submodules">enable</param>
+    <param name="package-meta">yes</param>
+    <param name="without-version">enable</param>
+  </service>
+  <service name="run" mode="localonly">
+    <param name="command">echo fine</param>
+  </service>
+  <service name="set_version" />
+  <service name="format_spec_file" />
+  <service name="tar" mode="buildtime">
+    <param name="package-meta">yes</param>
+  </service>
+  <service name="format_cmake" mode="buildtime">
+    <param name="cmake-directory">simdjson</param>
+    <param name="file">simdjson.spec</param>
+  </service>
+</services>
