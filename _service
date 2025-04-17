@@ -10,11 +10,7 @@
     <param name="package-meta">yes</param>
     <param name="without-version">enable</param>
   </service>
-  <service name="run" mode="localonly">
-    <param name="command">echo fine</param>
-  </service>
   <service name="set_version" />
-  <service name="format_spec_file" />
   <service name="tar" mode="buildtime">
     <param name="package-meta">yes</param>
   </service>
